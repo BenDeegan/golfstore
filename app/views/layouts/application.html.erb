@@ -7,11 +7,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
   <%= render 'layouts/header'%>
-    <div class="container">
-    <%= yield %>
+    <div id='container'>
+      <div id='content'>
+        <p class="notice"><%= flash[:notice] %></p>
+           <%= yield %>
+      </div>
+      <div id='first-column'>
+        <div class="loginbox">
+          <h2 class="BoxHeaders">Login here...</h2>
+        </div>
+      </div>
+      <div id='searchbox'>
+        <h2 class="BoxHeaders">Search Catalog</h2>
+      </div>
     </div>
   <%=render 'layouts/footer'%>  
   </body>
